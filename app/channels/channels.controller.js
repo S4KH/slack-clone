@@ -6,14 +6,20 @@ angular.module('fireSlack')
 	channelsCtrl.channels = channels;
 	channelsCtrl.getDisplayName = Users.getDisplayName;
 	channelsCtrl.getGravatar = Users.getGravatar;
+	channelsCtrl.users = Users.all;
 
 	channelsCtrl.newChannel = {
 		name: ''
 	};
 
+	Users.setOnline(profile.$id);
+
 	channelsCtrl.logout = function(){
-		Auth.$unauth();
-		$state.go('home');
+		channelsCtrl.profile.online = null;
+		channelsCtrl.profile.$save().then(function(){
+			Auth.$unauth();
+			$state.go('home');
+		});		
 	};
 
 	channelsCtrl.createChannel = function(){

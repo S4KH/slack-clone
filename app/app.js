@@ -111,7 +111,22 @@ angular
             return Messages.forChannel($stateParams.channelId).$loaded();
           },
           channelName: function($stateParams, channels){
-            return '#'+channels.$getRecord($stateParams.channelId).name
+            return '#'+channels.$getRecord($stateParams.channelId).name;
+          }
+        }
+      })
+      .state('channels.direct', {
+        url: '/{uid}/messages/direct',
+        templateUrl: 'channels/messages.html',
+        controller: 'MessagesCtrl as messagesCtrl',
+        resolve:{
+          messages: function($stateParams, Messages, profile){
+            return Messages.forUser($stateParams.uid, profile.$uid).$loaded();
+          },
+          channelName: function($stateParams, Users){
+            return Users.all.$loaded().then(function(){
+              return '@'+Users.getDisplayName($stateParams.uid);
+            });
           }
         }
       });
