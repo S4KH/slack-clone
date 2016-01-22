@@ -75,7 +75,7 @@ angular
         templateUrl: 'users/profile.html'
       })
       .state('channels', {
-        url: 'channels',
+        url: '/channels',
         controller: 'ChannelsCtrl as channelsCtrl',
         templateUrl: 'channels/index.html',
         resolve:{
@@ -96,6 +96,11 @@ angular
             })
           }
         }
+      })
+      .state('channels.create', {
+        url: '/create',
+        templateUrl: 'channels/create.html',
+        controller: 'ChannelsCtrl as channelsCtrl'
       });
 
     $urlRouterProvider.otherwise('/');
