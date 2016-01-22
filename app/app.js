@@ -61,7 +61,9 @@ angular
               return Users.getProfile(auth.uid).$loaded();
             })
           }
-        }
+        },
+        controller: 'ProfileCtrl as profileCtrl',
+        templateUrl: 'users/profile.html'
       });
 
     $urlRouterProvider.otherwise('/');
