@@ -1,11 +1,5 @@
-<style>
-    body {
-    padding-top: 120px;
-    padding-bottom: 40px;
-    background-color: #eee;
-  
-  }
-  .btn 
+<style type="text/css">
+.btn 
   {
    outline:0;
    border:none;
@@ -74,18 +68,9 @@
     border-color: rgb(0,0,0);
     border-top:1px solid rgba(0,0,0,0.08);
   }
-  .form-signin-heading {
-    color: #fff;
-    text-align: center;
-    text-shadow: 0 2px 2px rgba(0,0,0,0.5);
-  }
 </style>
+
 <div class="page-wrapper">
-
-  <div class="page-header">
-    <h1><a ui-sref="home"><img class="logo-img" src="images/logo.png" /></a> Log In</h1>
-  </div>
-
   <div ng-show="authCtrl.err">
     <span>{{ authCtrl.err.message }}</span>
   </div>
@@ -101,11 +86,11 @@
   </form>-->
 
   <form class="form-signin" ng-submit="authCtrl.login()">
-    <h1 class="form-signin-heading text-muted">Sign In</h1>
+    <h1 class="text-muted">    <img class="logo-img" src="images/logo.png" /><span class="form-signin-heading">   Log In</span></h1>
     <input type="text" class="form-control" placeholder="Email address" ng-model="authCtrl.user.email" required autofocus>
     <input type="password" class="form-control" placeholder="Password" ng-model="authCtrl.user.password" required>
     <button class="btn btn-lg btn-primary btn-block" type="submit">
-      Sign In
+      Log In
     </button>
   </form>
 
