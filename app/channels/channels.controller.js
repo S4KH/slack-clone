@@ -17,10 +17,11 @@ angular.module('fireSlack')
 	};
 
 	channelsCtrl.createChannel = function(){
-		channelsCtrl.channels.$add(channelsCtrl.newChannel).then(function(){
+		channelsCtrl.channels.$add(channelsCtrl.newChannel).then(function(ref){
 			channelsCtrl.newChannel = {
 				name: ''
 			};
+			$state.go('channels.messages', {channelId: ref.key()});
 		});
 	};
 });
