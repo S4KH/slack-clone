@@ -9,10 +9,13 @@
 			You need a display name before chatting.
 		</p>
 
-		<div class="input-group">
-			<input required type="text" class="form-control" placeholder="Nickname" ng-model="profileCtrl.profile.displayName">
-		</div>
-		<input type="submit" class="btn btn-success" value="Set nickname">
+		<div class="input-group">			
+			<span class="input-group-addon" id="basic-addon1">@</span>
+			<input required type="text" class="form-control" placeholder="Nickname" ng-model="profileCtrl.profile.displayName" aria-describedby="basic-addon1">
+			<span class="input-group-btn">
+		        <input class="btn btn-info" type="submit">Go!</button>
+	 		</span>
+		</div>		
 	</form>
 
 </div>
