@@ -70,9 +70,6 @@
   }
 </style>
 <div class="page-wrapper">
-  <div ng-show="authCtrl.err">
-    <span>{{ authCtrl.err.message }}</span>
-  </div>
 
 <!--  <form ng-submit="authCtrl.login()">
     <div class="input-group">
@@ -92,5 +89,9 @@
       Register
     </button>
   </form>
+
+  <div ng-show="authCtrl.err">
+    <span>{{ authCtrl.err.message }}</span>
+  </div>
 
 </div>
